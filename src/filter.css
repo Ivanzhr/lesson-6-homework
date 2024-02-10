@@ -1,0 +1,25 @@
+.filter {
+    width: 90%;
+    max-width: 1200px;
+    margin: 10px auto;
+    padding: 20px 20px 20px 0;
+    display: flex;
+    
+}
+
+.filter button {
+    border: none;
+    padding: 10px;
+    background-color: #ededed;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.filter button:hover {
+    cursor: pointer;
+    background-color: #cacaca;
+}
+
+.active {
+    background-color: #cacaca;
+}

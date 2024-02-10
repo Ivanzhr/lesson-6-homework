@@ -1,0 +1,42 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay:hover {
+    cursor: pointer;
+}
+
+.modal{
+    width: 50%;
+    background-color: #fff;
+    position: relative;
+}
+
+.modal img{
+   
+    width: 90%;
+}
+
+.modal h2{
+    font-size: 0.8em;
+    padding: 15px;
+}
+.modal span{
+    display: block;
+    position: absolute;
+    right: 7px;
+    top: 7px;
+    color: #000;
+    font-size: 2em;
+    transform: rotate(45deg);
+    cursor: pointer;
+    }
+

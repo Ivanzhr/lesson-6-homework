@@ -1,24 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState } from 'react';
+import Gallery from './Gallery';
+import Filter from './Filter';
+import pic from './Allpic';
+import Modal from './Modal';
 
 function App() {
+  const [selectedCategories, setSelectedCategories] = useState([]);
+
+  const [modal, setModal] = useState(null)
+
+  const handleFilterClick = (category) => {
+    if (selectedCategories.includes(category)) {
+      setSelectedCategories(selectedCategories.filter((cat) => cat !== category));
+    } else {
+      setSelectedCategories([...selectedCategories, category]);
+    }
+  };
+
+  const filteredPic = selectedCategories.length === 0
+    ? pic
+    : pic.filter((item) => item.category.some((cat) => selectedCategories.includes(cat)));
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h2>Фільтрувати</h2>
+      <Filter onFilterClick={handleFilterClick} />
+      <Gallery pic={filteredPic} setModal = {setModal}/>
+      <Modal modal = {modal} setModal = {setModal}/>
+    </>
   );
 }
 

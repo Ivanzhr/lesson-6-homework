@@ -1,0 +1,9 @@
+
+.gallery_item img {
+    display: block;
+    width: 100%; 
+}
+
+.gallery_item img:hover {
+    cursor: pointer;
+}
